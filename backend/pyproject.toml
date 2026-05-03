@@ -12,6 +12,7 @@ dependencies = [
     "langchain-groq>=1.1.2",
     "langchain-openai>=1.2.1",
     "langgraph>=1.1.10",
+    "langsmith>=0.8.0",
     "mem0ai>=2.0.1",
     "python-dotenv>=1.2.2",
     "sentence-transformers>=5.4.1",
