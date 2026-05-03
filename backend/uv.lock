@@ -143,11 +143,13 @@ dependencies = [
     { name = "fastapi" },
     { name = "langchain" },
     { name = "langchain-community" },
+    { name = "langchain-groq" },
     { name = "langchain-openai" },
     { name = "langgraph" },
     { name = "mem0ai" },
     { name = "python-dotenv" },
     { name = "sentence-transformers" },
+    { name = "tavily-python" },
     { name = "uvicorn" },
 ]
 
@@ -157,11 +159,13 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.136.1" },
     { name = "langchain", specifier = ">=1.2.17" },
     { name = "langchain-community", specifier = ">=0.4.1" },
+    { name = "langchain-groq", specifier = ">=1.1.2" },
     { name = "langchain-openai", specifier = ">=1.2.1" },
     { name = "langgraph", specifier = ">=1.1.10" },
     { name = "mem0ai", specifier = ">=2.0.1" },
     { name = "python-dotenv", specifier = ">=1.2.2" },
     { name = "sentence-transformers", specifier = ">=5.4.1" },
+    { name = "tavily-python", specifier = ">=0.7.24" },
     { name = "uvicorn", specifier = ">=0.46.0" },
 ]
 
@@ -646,6 +650,23 @@ wheels = [
 ]
 
 [[package]]
+name = "groq"
+version = "0.37.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "distro" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "sniffio" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e9/78/18948a9056e1509c87e10ab8316a90ecce87035fbd53342dffdf97f4de00/groq-0.37.1.tar.gz", hash = "sha256:7353d6dfb60834fd7aacbb86af106e2dc2aeaff6d0edd65fb2fd0f16bd39314c", size = 145289, upload-time = "2025-12-04T18:08:07.118Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5f/d6/645a081750e43f858b7d09dce5d8e1e76cf11e7e4bdba81252e04f78963d/groq-0.37.1-py3-none-any.whl", hash = "sha256:b49f8c8898c55eaec9f71f1342f3fcacc9560d67a08ce5f35fbfb84e8dacd3da", size = 137494, upload-time = "2025-12-04T18:08:05.801Z" },
+]
+
+[[package]]
 name = "grpcio"
 version = "1.80.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1078,6 +1099,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/a8/03/7219502e8ca728d65eb44d7a3eb60239230742a70dbfc9241b9bfd61c4ab/langchain_core-1.3.2.tar.gz", hash = "sha256:fd7a50b2f28ba561fd9d7f5d2760bc9e06cf00cdf820a3ccafe88a94ffa8d5b7", size = 911813, upload-time = "2026-04-24T15:49:23.699Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7d/d5/8fa4431007cbb7cfed7590f4d6a5dea3ad724f4174d248f6642ef5ce7d05/langchain_core-1.3.2-py3-none-any.whl", hash = "sha256:d44a66127f9f8db735bdfd0ab9661bccb47a97113cfd3f2d89c74864422b7274", size = 542390, upload-time = "2026-04-24T15:49:21.991Z" },
+]
+
+[[package]]
+name = "langchain-groq"
+version = "1.1.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "groq" },
+    { name = "langchain-core" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3d/d9/bbaa43598fcaffb669c5aea4088d92c77a426c46d25a013c21c979772a54/langchain_groq-1.1.2.tar.gz", hash = "sha256:67d1d752fb6590be517735947ec49b4ab9ed9191c7cca79f105d227775c67ae5", size = 178337, upload-time = "2026-02-02T15:57:29.435Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e8/11/71a35db3ed8ac2c7129eb69f0d590e4961be67ac84b6c470fc097d0dd7c8/langchain_groq-1.1.2-py3-none-any.whl", hash = "sha256:1f59f12233e8e6280c968bca6c40a7e5434e971e9a5387ad23c4c64ec776de10", size = 19450, upload-time = "2026-02-02T15:57:28.6Z" },
 ]
 
 [[package]]
@@ -2738,6 +2772,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/83/d3/803453b36afefb7c2bb238361cd4ae6125a569b4db67cd9e79846ba2d68c/sympy-1.14.0.tar.gz", hash = "sha256:d3d3fe8df1e5a0b42f0e7bdf50541697dbe7d23746e894990c030e2b05e72517", size = 7793921, upload-time = "2025-04-27T18:05:01.611Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl", hash = "sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5", size = 6299353, upload-time = "2025-04-27T18:04:59.103Z" },
+]
+
+[[package]]
+name = "tavily-python"
+version = "0.7.24"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+    { name = "requests" },
+    { name = "tiktoken" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/92/d3/a6a9c24bfafed30b4ce3c3d685ab00806ad631c9742441f2597ec91f0002/tavily_python-0.7.24.tar.gz", hash = "sha256:6c8954193c6472231e813fe50cbd07806bd86c7228957675eb45875a44d58296", size = 27311, upload-time = "2026-04-27T17:26:50.511Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/63/ce/37e3aba0f359f540bfc57eb178f73d521161761f21e0aa28749f42750b11/tavily_python-0.7.24-py3-none-any.whl", hash = "sha256:1a750108de42c4b0b46e4c1b7b64aeaf7fad7d7bac9167927edce0081fe166c9", size = 20022, upload-time = "2026-04-27T17:26:48.885Z" },
 ]
 
 [[package]]
