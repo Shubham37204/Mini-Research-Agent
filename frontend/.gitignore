@@ -1,0 +1,27 @@
+Add-Content frontend\.gitignore @"
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Env
+.env
+.env.local
+.env.production
+
+# Vite cache
+.vite/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+"@
