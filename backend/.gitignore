@@ -2,3 +2,20 @@
 .env
 *.env
 backend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Aegis
+.aegis/
+
+# Build
+dist/
+build/
+*.egg-info/
