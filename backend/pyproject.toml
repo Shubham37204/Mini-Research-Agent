@@ -1,21 +1,26 @@
 [project]
-name = "backend"
+name = "aegis"
 version = "0.1.0"
-description = "Add your description here"
+description = "Production-grade AI-powered Code Review and Analysis Platform"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
-    "chromadb>=1.5.8",
-    "fastapi>=0.136.1",
-    "langchain>=1.2.17",
-    "langchain-community>=0.4.1",
-    "langchain-groq>=1.1.2",
-    "langchain-openai>=1.2.1",
-    "langgraph>=1.1.10",
-    "langsmith>=0.8.0",
-    "mem0ai>=2.0.1",
-    "python-dotenv>=1.2.2",
-    "sentence-transformers>=5.4.1",
-    "tavily-python>=0.7.24",
-    "uvicorn>=0.46.0",
+    "pydantic>=2.7.0",
+    "litellm>=1.40.0",
+    "typer>=0.12.0",
+    "rich>=13.7.0",
+    "pyyaml>=6.0.1",
+    "gitpython>=3.1.43",
+    "python-dotenv>=1.0.1",
+    "tenacity>=8.3.0",
+    "fastapi>=0.111.0",
+    "uvicorn>=0.30.0",
 ]
+
+[project.scripts]
+aegis = "aegis.cli.main:app"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

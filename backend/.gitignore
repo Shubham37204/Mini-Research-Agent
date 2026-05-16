@@ -1,31 +1,4 @@
-Add-Content backend\.gitignore @"
-# Virtual env
-.venv/
-venv/
-
-# Python cache
-__pycache__/
-**/__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Env
+# Environment files
 .env
-
-# uv
-.uv/
-
-# DB / vector store
-chroma_db/
-*.db
-*.sqlite
-
-# Logs
-*.log
-logs/
-
-# OS
-.DS_Store
-Thumbs.db
-"@
+*.env
+backend/.env

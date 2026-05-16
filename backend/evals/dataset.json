@@ -1,0 +1,57 @@
+[
+    {
+        "id": "case_001",
+        "description": "Simple OS command injection",
+        "diff": "--- a/app.py\n+++ b/app.py\n@@ -1,3 +1,3 @@\n def run_cmd(cmd):\n-    pass\n+    import os\n+    os.system(cmd)",
+        "expected_findings": [
+            {
+                "category": "security",
+                "title": "OS Command Injection"
+            }
+        ]
+    },
+    {
+        "id": "case_002",
+        "description": "Hardcoded API Key",
+        "diff": "--- a/config.py\n+++ b/config.py\n@@ -1,1 +1,2 @@\n-def get_config():\n+def get_config():\n+    return {'api_key': 'gsk_123456789'}",
+        "expected_findings": [
+            {
+                "category": "security",
+                "title": "Potential Secret Exposure"
+            }
+        ]
+    },
+    {
+        "id": "case_003",
+        "description": "Debug Print Removal",
+        "diff": "--- a/main.py\n+++ b/main.py\n@@ -1,1 +1,2 @@\n-def start():\n+def start():\n+    print('DEBUG: starting app')",
+        "expected_findings": [
+            {
+                "category": "maintainability",
+                "title": "Debug Print Detected"
+            }
+        ]
+    },
+    {
+        "id": "case_004",
+        "description": "Dangerous Subprocess",
+        "diff": "--- a/utils.py\n+++ b/utils.py\n@@ -1,1 +1,2 @@\n-def run(cmd):\n+def run(cmd):\n+    import subprocess\n+    subprocess.run(cmd, shell=True)",
+        "expected_findings": [
+            {
+                "category": "security",
+                "title": "Dangerous Subprocess"
+            }
+        ]
+    },
+    {
+        "id": "case_005",
+        "description": "Unsafe Eval",
+        "diff": "--- a/api.py\n+++ b/api.py\n@@ -1,1 +1,2 @@\n-def parse(data):\n+def parse(data):\n+    return eval(data)",
+        "expected_findings": [
+            {
+                "category": "security",
+                "title": "Unsafe eval"
+            }
+        ]
+    }
+]
